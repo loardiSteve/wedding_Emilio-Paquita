@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Invitation</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="bg-secondary-ivory font-serif-body">
+    <!-- Header with Navigation -->
+    <header
+      class="fixed w-full z-50 bg-secondary-warm-white bg-opacity-90 backdrop-blur-sm shadow-sm">
+      <nav
+        class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <!-- Logo/Brand -->
+        <div class="flex items-center">
+          <div
+            class="w-10 h-10 rounded-full bg-primary-pastel-pink flex items-center justify-center mr-2">
+            <i class="fas fa-heart text-white"></i>
+          </div>
+          <span
+            class="text-xl font-serif-display font-bold text-primary-sky-blue"
+            >Our Wedding</span
+          >
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="#hero"
+            class="text-text-medium hover:text-primary-sky-blue font-medium transition duration-300"
+            >Home</a
+          >
+          <a
+            href="#couple"
+            class="text-text-medium hover:text-primary-sky-blue font-medium transition duration-300"
+            >Couple</a
+          >
+          <a
+            href="#date"
+            class="text-text-medium hover:text-primary-sky-blue font-medium transition duration-300"
+            >Save the Date</a
+          >
+          <a
+            href="#gallery"
+            class="text-text-medium hover:text-primary-sky-blue font-medium transition duration-300"
+            >Gallery</a
+          >
+          <a
+            href="#messages"
+            class="text-text-medium hover:text-primary-sky-blue font-medium transition duration-300"
+            >Messages</a
+          >
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+          <button
+            id="mobile-menu-button"
+            class="text-text-medium focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Navigation Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-secondary-warm-white py-4 px-4 absolute w-full shadow-lg">
+        <div class="flex flex-col space-y-4">
+          <a
+            href="#hero"
+            class="text-text-medium hover:text-primary-sky-blue py-2 font-medium"
+            >Home</a
+          >
+          <a
+            href="#couple"
+            class="text-text-medium hover:text-primary-sky-blue py-2 font-medium"
+            >Couple</a
+          >
+          <a
+            href="#date"
+            class="text-text-medium hover:text-primary-sky-blue py-2 font-medium"
+            >Save the Date</a
+          >
+          <a
+            href="#gallery"
+            class="text-text-medium hover:text-primary-sky-blue py-2 font-medium"
+            >Gallery</a
+          >
+          <a
+            href="#messages"
+            class="text-text-medium hover:text-primary-sky-blue py-2 font-medium"
+            >Messages</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Skip to content for accessibility -->
+    <!-- <div class="h-20"></div> -->
+    <!-- Spacer to account for fixed header -->
+
+    <!-- Hero Section with Background Image -->
+    <section
+      id="hero"
+      class="relative h-screen flex items-center justify-center overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src="/assets/FAD08888.JPG"
+          alt="Wedding Background"
+          class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-overlay-dark"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="relative z-10 text-center px-4">
+        <h1
+          class="text-5xl md:text-7xl font-serif-display font-bold text-white mb-4 animate-fade-in">
+          Emilio <span class="text-accent-gold">&</span> Paquita
+        </h1>
+        <div class="w-24 h-1 bg-primary-pastel-pink mx-auto mb-8"></div>
+        <p
+          class="text-xl md:text-2xl text-white font-serif-body font-light mb-12 max-w-2xl mx-auto">
+          Join us as we say "I do" and begin our journey together
+        </p>
+
+        <!-- Scroll Button -->
+        <a href="#couple" class="scroll-down">
+          <div class="animate-bounce flex justify-center">
+            <button
+              class="bg-primary-pastel-pink hover:bg-accent-gold text-white p-4 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+              <i class="fas fa-chevron-down text-2xl"></i>
+            </button>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Couple Section -->
+    <section id="couple" class="py-20 px-4 bg-secondary-ivory">
+      <div class="container mx-auto">
+        <!-- Rectangular Image with Names in Flex Row -->
+        <div class="flex flex-row-reverse items-center">
+          <!-- Image -->
+          <div class="w-full md:w-1/2 mb-8 md:mb-0">
+            <div
+              class="rounded-xl overflow-hidden shadow-xl border-4 border-primary-pastel-pink">
+              <img
+                src="/assets/FAD08888.JPG"
+                alt="Emilio Pascoal and Paquita"
+                class="w-full h-auto object-cover" />
+            </div>
+          </div>
+
+          <!-- Names and Text -->
+          <div class="w-full md:w-1/2 flex flex-col gap-5 text-center px-4">
+            <h1 class="text-sm md:text-3xl">Anda Diundang</h1>
+            <h3
+              class="text-3xl md:text-6xl font-serif-display font-bold text-primary-sky-blue mb-4 text-pretty">
+              Emilio <span class="text-primary-pastel-pink">&</span> Paquita
+            </h3>
+            <p>Minggu, 26 Oktober 2025</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Save The Date Section -->
+    <section id="date" class="py-20 px-4 bg-secondary-ivory">
+      <div class="container mx-auto text-center flex flex-row gap-1">
+        <div
+          class="relative w-1/3 rounded-t-full overflow-hidden border-2 border-white">
+          <img
+            src="/assets/FAD08888.JPG"
+            alt="Couple"
+            class="object-cover w-full h-auto" />
+        </div>
+
+        <div class="w-2/3">
+          <div class="mt-4 md:mt-0 md:ml-4 text-center">
+            <h2 class="text-lg tracking-widest">SAVE THE DATE</h2>
+            <p class="text-sm mb-4">OKTOBER 2025</p>
+
+            <!-- Grid hari -->
+            <div
+              class="grid grid-cols-7 gap-1 text-xs text-center sm:text-sm mb-4">
+              <!-- Header hari -->
+              <span class="text-center">sun</span
+              ><span class="text-center">mon</span
+              ><span class="text-center">tue</span
+              ><span class="text-center">wed</span
+              ><span class="text-center">thu</span
+              ><span class="text-center">fri</span
+              ><span class="text-center">sat</span>
+
+              <!-- Tanggal Oktober 2025 -->
+              <span></span><span></span><span></span><span>1</span><span>2</span
+              ><span>3</span><span>4</span> <span>5</span><span>6</span
+              ><span>7</span><span>8</span><span>9</span><span>10</span
+              ><span>11</span> <span>12</span><span>13</span><span>14</span
+              ><span>15</span><span>16</span><span>17</span><span>18</span>
+              <span>19</span><span>20</span><span>21</span><span>22</span
+              ><span>23</span><span>24</span><span>25</span>
+              <span
+                class="bg-white text-[#a9b2a1] rounded-full font-semibold flex items-center justify-center"
+                >26</span
+              ><span class="text-center">27</span
+              ><span class="text-center">28</span
+              ><span class="text-center">29</span
+              ><span class="text-center">30</span
+              ><span class="text-center">31</span><span></span>
+            </div>
+            <div class="flex gap-4 justify-center">
+              <button
+                class="max-w-48 bg-white text-[#a9b2a1] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold">
+                ADD TO CALENDAR
+              </button>
+              <button
+                class="w-48 bg-white text-[#a9b2a1] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold">
+                JOIN ZOOM
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Streaming Section -->
+    <!-- <section class="py-20 px-4">
+      <div class="container mx-auto text-center">
+        <h2
+          class="text-4xl font-serif-display font-bold text-primary-sky-blue mb-6">
+          Join Streaming
+        </h2>
+        <p class="text-lg font-serif-body text-text-dark max-w-3xl mx-auto">
+          Can't be with us in person? Join our ceremony via live streaming.
+        </p>
+      </div>
+    </section> -->
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 px-4 bg-secondary-ivory">
+      <div class="container mx-auto">
+        <h2
+          class="text-4xl font-serif-display font-bold text-primary-sky-blue mb-12 text-center">
+          Gallery
+        </h2>
+
+        <!-- Bento Grid Gallery with Vertical Scroll -->
+        <div class="max-w-6xl mx-auto">
+          <div class="gallery-grid-container">
+            <!-- Large Bento Item -->
+            <div
+              class="gallery-item rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+              onclick="openLightbox(0)">
+              <img
+                src="https://images.unsplash.com/photo-1519877623245-1a3f3b7413d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                alt="Gallery Image 1"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            </div>
+
+            <!-- Medium Bento Item -->
+            <div
+              class="gallery-item rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+              onclick="openLightbox(1)">
+              <img
+                src="https://images.unsplash.com/photo-1513836274058-2e2d5ffe506a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Gallery Image 2"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            </div>
+
+            <!-- Small Bento Item -->
+            <div
+              class="gallery-item rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+              onclick="openLightbox(2)">
+              <img
+                src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Gallery Image 3"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            </div>
+
+            <!-- Tall Bento Item -->
+            <div
+              class="gallery-item rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+              onclick="openLightbox(3)">
+              <img
+                src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Gallery Image 4"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            </div>
+
+            <!-- Square Bento Item 1 -->
+            <div
+              class="gallery-item rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+              onclick="openLightbox(4)">
+              <img
+                src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Gallery Image 5"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            </div>
+
+            <!-- Square Bento Item 2 -->
+            <div
+              class="gallery-item rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+              onclick="openLightbox(5)">
+              <img
+                src="https://images.unsplash.com/photo-1519877623245-1a3f3b7413d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Gallery Image 6"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            </div>
+
+            <!-- Square Bento Item 3 -->
+            <div
+              class="gallery-item rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+              onclick="openLightbox(6)">
+              <img
+                src="https://images.unsplash.com/photo-1513836274058-2e2d5ffe506a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Gallery Image 7"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            </div>
+
+            <!-- Square Bento Item 4 -->
+            <div
+              class="gallery-item rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+              onclick="openLightbox(7)">
+              <img
+                src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Gallery Image 8"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            </div>
+
+            <!-- Gallery Item 9 -->
+            <div
+              class="gallery-item rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+              onclick="openLightbox(8)">
+              <img
+                src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Gallery Image 9"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            </div>
+
+            <!-- Gallery Item 10 -->
+            <div
+              class="gallery-item rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+              onclick="openLightbox(9)">
+              <img
+                src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Gallery Image 10"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            </div>
+
+            <!-- Gallery Item 11 -->
+            <div
+              class="gallery-item rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+              onclick="openLightbox(10)">
+              <img
+                src="https://images.unsplash.com/photo-1519877623245-1a3f3b7413d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Gallery Image 11"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            </div>
+            <div
+              class="gallery-item rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+              onclick="openLightbox(11)">
+              <img
+                src="https://images.unsplash.com/photo-1519877623245-1a3f3b7413d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Gallery Image 11"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div
+      id="lightbox"
+      class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center">
+      <div class="relative w-full h-full max-w-6xl max-h-full p-4">
+        <button
+          onclick="closeLightbox()"
+          class="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-2 z-10">
+          <i class="fas fa-times text-xl"></i>
+        </button>
+        <img
+          id="lightbox-img"
+          src=""
+          alt="Fullscreen Gallery Image"
+          class="w-full h-full object-contain max-h-full" />
+        <button
+          onclick="changeImage(-1)"
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 rounded-full p-3 text-xl">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button
+          onclick="changeImage(1)"
+          class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 rounded-full p-3 text-xl">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Messages Section -->
+    <section id="messages" class="py-20 px-4">
+      <div class="container mx-auto">
+        <h2
+          class="text-4xl font-serif-display font-bold text-primary-sky-blue mb-6 text-center">
+          Pesan utk mempelai
+        </h2>
+        <p
+          class="text-lg font-serif-body text-text-dark max-w-3xl mx-auto text-center mb-12">
+          Share your wishes and messages for the happy couple.
+        </p>
+
+        <!-- Message Form -->
+        <div
+          class="max-w-2xl mx-auto bg-secondary-warm-white rounded-2xl py-8 shadow-lg mb-16">
+          <form id="messageForm" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label
+                  for="senderName"
+                  class="block text-text-dark font-medium mb-2"
+                  >Your Name</label
+                >
+                <input
+                  type="text"
+                  id="senderName"
+                  class="w-full px-4 py-3 rounded-xl border border-border-medium focus:outline-none focus:ring-2 focus:ring-primary-pastel-pink focus:border-transparent"
+                  placeholder="Enter your name"
+                  required />
+              </div>
+            </div>
+            <div>
+              <label for="message" class="block text-text-dark font-medium mb-2"
+                >Your Message</label
+              >
+              <textarea
+                id="message"
+                rows="5"
+                class="w-full px-4 py-3 rounded-xl border border-border-medium focus:outline-none focus:ring-2 focus:ring-primary-pastel-pink focus:border-transparent"
+                placeholder="Write your wishes and messages for the couple..."
+                required></textarea>
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                class="bg-primary-pastel-pink hover:bg-accent-gold text-white font-medium py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Messages Display -->
+        <div class="max-w-4xl mx-auto">
+          <h3
+            class="text-2xl font-serif-display font-bold text-primary-sky-blue mb-8 text-center">
+            Messages from Loved Ones
+          </h3>
+          <div id="messagesContainer" class="space-y-6">
+            <!-- Messages will be dynamically added here -->
+            <div class="bg-secondary-warm-white rounded-2xl p-6 shadow-md">
+              <div class="flex items-start">
+                <div
+                  class="bg-primary-pastel-pink rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="fas fa-user text-white"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-start">
+                    <h4 class="font-bold text-text-dark">Anonymous</h4>
+                    <span class="text-sm text-text-light">Just now</span>
+                  </div>
+                  <p class="text-text-dark mt-2">
+                    Congratulations on your wedding! Wishing you both a lifetime
+                    of happiness and love.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thank You Section -->
+    <section class="py-20 px-4 bg-secondary-ivory">
+      <div class="container mx-auto text-center">
+        <h2
+          class="text-4xl font-serif-display font-bold text-primary-sky-blue mb-6">
+          Thank You
+        </h2>
+        <p class="text-lg font-serif-body text-text-dark max-w-3xl mx-auto">
+          Thank you for being part of our special day and celebrating with us.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-charcoal text-text-light py-2">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="">
+            <div class="flex items-center">
+              <i class="fas fa-heart text-primary-pastel-pink mr-2"></i>
+              <span class="text-lg font-serif-display font-medium"
+                >LoardiSteve &copy; 2025</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+  </body>
+</html>
