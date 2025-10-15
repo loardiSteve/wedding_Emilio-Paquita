@@ -12,14 +12,8 @@ const CONFIG = {
   },
 };
 
-// Firebase Imports
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-import {
-  getDatabase,
-  ref,
-  push,
-  onValue,
-} from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
+// Firebase is loaded via script tag in HTML, so we can use the global firebase variables
+const { initializeApp, getDatabase, ref, push, onValue } = firebase;
 
 // Mobile menu toggle functionality
 const mobileMenuButton = document.getElementById("mobile-menu-button");
@@ -51,17 +45,18 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
 // Gallery Lightbox Functionality
 const galleryImages = [
-  "https://images.unsplash.com/photo-1519877623245-1a3f3b7413d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1513836274058-2e2d5ffe506a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1506260408121-e353d10b87c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1519877623245-1a3f3b7413d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1513836274058-2e2d5ffe506a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1506260408121-e353d10b87c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1519877623245-1a3f3b7413d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+  "assets/gallery.jpg",
+  "assets/gallery2.jpg",
+  "assets/gallery3.jpg",
+  "assets/gallery4.jpg",
+  "assets/gallery5.jpg",
+  "assets/gallery6.jpg",
+  "assets/gallery7.jpg",
+  "assets/gallery12.jpg",
+  "assets/gallery9.jpg",
+  "assets/gallery8.jpg",
+  "assets/gallery11.jpg",
+  "assets/gallery10.jpg",
 ];
 
 let currentImageIndex = 0;
@@ -121,6 +116,8 @@ const app = initializeApp(CONFIG.FIREBASE);
 const db = getDatabase(app);
 
 document.addEventListener("DOMContentLoaded", function () {
+  const messageForm = document.getElementById("messageForm");
+
   messageForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -136,7 +133,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Reset form
     messageForm.reset();
 
-    // Show confirmation message
+    // Show confirmation toast
+    showToast(
+      "Thank you for your message! It has been added to our wishes collection.",
+      "success",
+      4000
+    );
   });
 });
 
@@ -161,7 +163,7 @@ function addMessageToDisplay() {
     messagesContainer.innerHTML = "";
     snapshot.forEach((childSnapshot) => {
       const data = childSnapshot.val();
-      console.log(data);
+      // console.log(data);
 
       const messageElement = document.createElement("div");
 
@@ -198,6 +200,59 @@ function formatDate(dateString) {
     hour: "2-digit",
     minute: "2-digit",
   });
+}
+
+// Toast Notification Functions
+function showToast(message, type = "success", duration = 3000) {
+  const toastContainer = document.getElementById("toastContainer");
+
+  // Create toast element
+  const toast = document.createElement("div");
+  toast.className = `toast ${type}`;
+
+  // Add icon based on type
+  let icon = "";
+  switch (type) {
+    case "success":
+      icon = '<i class="fas fa-check-circle toast-icon"></i>';
+      break;
+    case "error":
+      icon = '<i class="fas fa-exclamation-circle toast-icon"></i>';
+      break;
+    case "info":
+      icon = '<i class="fas fa-info-circle toast-icon"></i>';
+      break;
+    default:
+      icon = '<i class="fas fa-info-circle toast-icon"></i>';
+  }
+
+  // Add content to toast
+  toast.innerHTML = `
+    ${icon}
+    <div class="toast-content">${message}</div>
+    <button class="toast-close">&times;</button>
+  `;
+
+  // Add toast to container
+  toastContainer.appendChild(toast);
+
+  // Add close functionality
+  const closeBtn = toast.querySelector(".toast-close");
+  closeBtn.addEventListener("click", () => {
+    removeToast(toast);
+  });
+
+  // Auto remove toast after duration
+  setTimeout(() => {
+    removeToast(toast);
+  }, duration);
+}
+
+function removeToast(toast) {
+  toast.classList.add("fade-out");
+  setTimeout(() => {
+    toast.remove();
+  }, 300);
 }
 
 // Music toggle functionality
@@ -247,3 +302,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
+// Make lightbox functions globally available so HTML onclick handlers can access them
+window.openLightbox = openLightbox;
+window.closeLightbox = closeLightbox;
+window.changeImage = changeImage;
