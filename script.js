@@ -1,3 +1,26 @@
+const CONFIG = {
+  FIREBASE: {
+    apiKey: "AIzaSyDmypsckUaJPTCr4u-nRtSlCQVmoHGEibk",
+    authDomain: "wedding-guestbook-9d290.firebaseapp.com",
+    databaseURL:
+      "https://wedding-guestbook-9d290-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "wedding-guestbook-9d290",
+    storageBucket: "wedding-guestbook-9d290.appspot.com",
+    messagingSenderId: "955528844935",
+    appId: "1:955528844935:web:c9e40f65a4901eba32ca22",
+    measurementId: "G-20VMYH24QZ",
+  },
+};
+
+// Firebase Imports
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+import {
+  getDatabase,
+  ref,
+  push,
+  onValue,
+} from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
+
 // Mobile menu toggle functionality
 const mobileMenuButton = document.getElementById("mobile-menu-button");
 const mobileMenu = document.getElementById("mobile-menu");
@@ -94,135 +117,75 @@ document.addEventListener("keydown", function (e) {
 });
 
 // Messages functionality
+const app = initializeApp(CONFIG.FIREBASE);
+const db = getDatabase(app);
+
 document.addEventListener("DOMContentLoaded", function () {
-  const messageForm = document.getElementById("messageForm");
-  const messagesContainer = document.getElementById("messagesContainer");
-
-  // Check if this is the first time loading the page and add dummy messages
-  if (!localStorage.getItem("weddingMessages")) {
-    // Add some dummy messages
-    const dummyMessages = [
-      {
-        id: 1,
-        name: "Sarah Johnson",
-        message:
-          "Wishing you both a lifetime of happiness and love! May your marriage be filled with joy, laughter, and endless adventures together.",
-        timestamp: new Date(Date.now() - 86400000).toISOString(), // 1 day ago
-      },
-      {
-        id: 2,
-        name: "Michael & Lisa",
-        message:
-          "Congratulations on your special day! You make such a beautiful couple. Here's to your happily ever after!",
-        timestamp: new Date(Date.now() - 172800000).toISOString(), // 2 days ago
-      },
-      {
-        id: 3,
-        name: "Aunt Maria",
-        message:
-          "Watching you both grow and find each other has been such a blessing. You deserve all the happiness in the world!",
-        timestamp: new Date(Date.now() - 259200000).toISOString(), // 3 days ago
-      },
-      {
-        id: 4,
-        name: "David Chen",
-        message:
-          "Your love story is truly inspiring. Wishing you both a wonderful wedding day and a beautiful future together!",
-        timestamp: new Date(Date.now() - 345600000).toISOString(), // 4 days ago
-      },
-    ];
-
-    // Save dummy messages to localStorage
-    localStorage.setItem("weddingMessages", JSON.stringify(dummyMessages));
-  }
-
-  // Load existing messages from localStorage
-  loadMessages();
-
   messageForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const senderName = document.getElementById("senderName").value;
-    const senderEmail = document.getElementById("senderEmail").value;
-    const messageText = document.getElementById("message").value;
+    const name = document.getElementById("senderName").value;
+    const wish = document.getElementById("message").value;
 
-    // Create message object
-    const newMessage = {
-      id: Date.now(), // Use timestamp as unique ID
-      name: senderName,
-      message: messageText,
-      timestamp: new Date().toISOString(),
-    };
-
-    // Save message to localStorage
-    saveMessage(newMessage);
-
-    // Add message to the display
-    addMessageToDisplay(newMessage);
+    push(ref(db, "messages/weddingB"), {
+      name: name,
+      message: wish,
+      time: Date.now(),
+    });
 
     // Reset form
     messageForm.reset();
 
     // Show confirmation message
-    alert(
-      "Thank you for your message! It has been added to our wishes collection."
-    );
   });
 });
 
-// Function to save message to localStorage
-function saveMessage(message) {
-  let messages = JSON.parse(localStorage.getItem("weddingMessages")) || [];
-  messages.unshift(message); // Add to beginning of array
-  localStorage.setItem("weddingMessages", JSON.stringify(messages));
-}
-
-// Function to load messages from localStorage
-function loadMessages() {
-  const messages = JSON.parse(localStorage.getItem("weddingMessages")) || [];
-  messagesContainer.innerHTML = ""; // Clear existing messages
-
-  if (messages.length === 0) {
-    // Show default message if no messages exist
-    messagesContainer.innerHTML = `
-      <div class="text-center py-10">
-        <i class="fas fa-envelope-open-text text-5xl text-primary-pastel-pink mb-4"></i>
-        <p class="text-lg text-text-medium">No messages yet. Be the first to share your wishes!</p>
-      </div>
-    `;
-    return;
-  }
-
-  messages.forEach((message) => {
-    addMessageToDisplay(message);
-  });
-}
+// Function to load messages from firebase
+addMessageToDisplay();
 
 // Function to add a single message to the display
-function addMessageToDisplay(message) {
+function addMessageToDisplay() {
   // If the container only has the default message, clear it
-  if (messagesContainer.innerHTML.includes("No messages yet")) {
-    messagesContainer.innerHTML = "";
-  }
 
-  const messageElement = document.createElement("div");
-  messageElement.className =
-    "bg-[color:var(--secondary-ivory)] rounded-2xl p-6 shadow-md";
-  messageElement.innerHTML = `
+  onValue(ref(db, "messages/weddingB"), (snapshot) => {
+    if (snapshot.val() === null) {
+      messagesContainer.innerHTML = `
+            <div class="text-center py-10">
+              <i class="fas fa-envelope-open-text text-5xl text-primary-pastel-pink mb-4"></i>
+              <p class="text-lg text-text-medium">No messages yet. Be the first to share your wishes!</p>
+            </div>
+          `;
+      return;
+    }
+
+    messagesContainer.innerHTML = "";
+    snapshot.forEach((childSnapshot) => {
+      const data = childSnapshot.val();
+      console.log(data);
+
+      const messageElement = document.createElement("div");
+
+      messagesContainer.insertBefore(
+        messageElement,
+        messagesContainer.firstChild
+      );
+      messageElement.className =
+        "bg-[color:var(--secondary-ivory)] rounded-2xl p-6 shadow-md";
+      messageElement.innerHTML = `
     <div class="flex items-start ">
       <div class="flex-1">
         <div class="flex justify-between items-start">
-          <h4 class="font-bold [color:var(--text-dark)]">${message.name || "Anonymous"}</h4>
+          <h4 class="font-bold [color:var(--text-dark)]">${data.name || "Anonymous"}</h4>
         </div>
-        <p class="text-[color:var(--text-dark)] mt-2 mb-2">${message.message}</p>
-        <span class="text-xs text-[color:var(--text-light)]">${formatDate(message.timestamp)}</span>
-
+        <p class="text-[color:var(--text-dark)] mt-2 mb-2">${data.message}</p>
+        <span class="text-xs text-[color:var(--text-light)]">${formatDate(data.time)}</span>
       </div>
     </div>
   `;
+    });
+  });
 
   // Add to the beginning of the container to show newest first
-  messagesContainer.insertBefore(messageElement, messagesContainer.firstChild);
 }
 
 // Helper function to format date
@@ -236,3 +199,51 @@ function formatDate(dateString) {
     minute: "2-digit",
   });
 }
+
+// Music toggle functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const musicToggle = document.getElementById("musicToggle");
+  const backgroundMusic = document.getElementById("backgroundMusic");
+  let isPlaying = false;
+
+  // Initialize music state
+  updateMusicIcon();
+
+  musicToggle.addEventListener("click", function () {
+    const icon = musicToggle.querySelector("i");
+
+    if (isPlaying) {
+      // Pause the music
+      backgroundMusic.pause();
+      icon.classList.remove("fa-pause");
+      icon.classList.add("fa-music");
+      musicToggle.classList.remove("music-playing");
+      isPlaying = false;
+    } else {
+      // Play the music
+      icon.classList.remove("fa-music");
+      icon.classList.add("fa-pause");
+      // Add animation when music is playing
+      musicToggle.classList.add("music-playing");
+
+      backgroundMusic
+        .play()
+        .then(() => {
+          isPlaying = true;
+        })
+        .catch((error) => {
+          console.log("Music play failed:", error);
+          // If autoplay is blocked, we'll still toggle the state so user can manually play later
+          isPlaying = !isPlaying;
+        });
+    }
+
+    updateMusicIcon();
+  });
+
+  function updateMusicIcon() {
+    if (isPlaying) {
+    } else {
+    }
+  }
+});

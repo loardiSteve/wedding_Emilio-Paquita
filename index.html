@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wedding Invitation</title>
+
     <!-- Tailwind CSS via CDN -->
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -139,7 +140,7 @@
         <div class="animate-bounce flex justify-center">
           <a href="#couple" class="scroll-down">
             <button
-              class="bg-[color:var(--primary-mint)] hover:bg-[color:var(--primary-soft-rose)] text-white py-4 px-5 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+              class="bg-[color:var(--primary-mint)] hover:bg-[color:var(--primary-soft-rose)] text-[color:var(--text-dark)] py-4 px-5 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
               <i class="fas fa-chevron-down text-2xl"></i>
             </button>
           </a>
@@ -462,6 +463,7 @@
                     <input
                       type="text"
                       id="senderName"
+                      name="senderName"
                       class="w-full px-4 py-3 rounded-xl border border-border-medium focus:outline-none focus:ring-2 focus:ring-[color:var(--primary-pastel-pink)] focus:border-transparent"
                       placeholder="Enter your name"
                       required />
@@ -475,6 +477,7 @@
                   >
                   <textarea
                     id="message"
+                    name="message"
                     rows="5"
                     class="w-full px-4 py-3 rounded-xl border border-border-medium focus:outline-none focus:ring-2 focus:ring-[color:var(--primary-pastel-pink)] focus:border-transparent"
                     placeholder="Write your wishes and messages for the couple..."
@@ -499,25 +502,6 @@
             </h3>
             <div id="messagesContainer" class="space-y-6">
               <!-- Messages will be dynamically added here -->
-              <div
-                class="bg-[color:var(--secondary-warm-white)] rounded-2xl p-6 shadow-md">
-                <div class="flex items-start">
-                  <div class="flex-1">
-                    <div class="flex justify-between items-start">
-                      <h4 class="font-bold text-[color:var(--text-dark)]">
-                        Anonymous
-                      </h4>
-                      <span class="text-sm text-[color:var(--text-light)]"
-                        >Just now</span
-                      >
-                    </div>
-                    <p class="text-[color:var(--text-dark)] mt-2">
-                      Congratulations on your wedding! Wishing you both a
-                      lifetime of happiness and love.
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -556,7 +540,18 @@
       </div>
     </footer>
 
+    <!-- Music Toggle Button -->
+    <button
+      id="musicToggle"
+      class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[color:var(--primary-mint)] text-[color-var(--text-dark)] shadow-lg flex items-center justify-center hover:bg-[color:var(--primary-soft-rose)] transition duration-300 transform hover:scale-110">
+      <i class="fas fa-music text-xl"></i>
+      <audio id="backgroundMusic" loop>
+        <source src="/assets/audio/wedding-music.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </button>
+
     <!-- Link to external JavaScript file -->
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
   </body>
 </html>

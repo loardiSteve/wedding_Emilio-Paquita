@@ -278,3 +278,13 @@ footer a:hover {
 footer i.fa-heart {
   color: var(--primary-pastel-pink);
 }
+
+/* Music button animation */
+.music-playing {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
