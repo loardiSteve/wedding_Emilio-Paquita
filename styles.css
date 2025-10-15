@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   /* Elegant and Modern Wedding Color Palette */
 
@@ -10,6 +14,7 @@
   /* Secondary Colors */
   --secondary-ivory: #fdf6f0;
   --secondary-warm-white: #fff9f4;
+  --secondary-warm-white-60: rgb(252, 231, 222, 0.5);
   --secondary-light-gray: #f2f2f2;
   --secondary-charcoal: #4a4a4a;
 
@@ -51,6 +56,10 @@ body {
     background-color 0.3s ease,
     color 0.3s ease,
     border-color 0.3s ease;
+}
+
+textarea {
+  resize: none;
 }
 
 /* Bento Grid Gallery Styles */
@@ -162,8 +171,6 @@ body {
   }
 }
 
-
-
 /* Normal grid layout - 2 columns on mobile, 4 columns on tablet and above */
 .gallery-grid-container {
   display: grid;
@@ -247,7 +254,7 @@ body {
   #messageForm {
     padding: 1.5rem;
   }
-  
+
   .messages-grid {
     grid-template-columns: 1fr;
   }

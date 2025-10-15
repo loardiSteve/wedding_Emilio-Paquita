@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wedding Invitation</title>
     <!-- Tailwind CSS via CDN -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
     <link
@@ -18,21 +19,17 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
 
-  <body class="bg-secondary-ivory font-serif-body">
+  <body class="bg-[color:var(--secondary-ivory)] font-serif-body">
     <!-- Header with Navigation -->
     <header
-      class="fixed w-full z-50 bg-secondary-warm-white bg-opacity-90 backdrop-blur-sm shadow-sm">
+      class="fixed w-full z-50 bg-white bg-opacity-70 backdrop-blur-md shadow-sm">
       <nav
         class="container mx-auto px-4 py-3 flex justify-between items-center">
         <!-- Logo/Brand -->
         <div class="flex items-center">
-          <div
-            class="w-10 h-10 rounded-full bg-primary-pastel-pink flex items-center justify-center mr-2">
-            <i class="fas fa-heart text-white"></i>
-          </div>
           <span
-            class="text-xl font-serif-display font-bold text-primary-sky-blue"
-            >Our Wedding</span
+            class="text-xl font-serif-display font-bold text-[color:var(--secondary-charcoal)]"
+            >Emilio & Paquita</span
           >
         </div>
 
@@ -40,27 +37,27 @@
         <div class="hidden md:flex space-x-8">
           <a
             href="#hero"
-            class="text-text-medium hover:text-primary-sky-blue font-medium transition duration-300"
+            class="text-[color:var(--secondary-charcoal)] hover:text-[color:var(--primary-pastel-pink)] font-medium transition duration-300"
             >Home</a
           >
           <a
             href="#couple"
-            class="text-text-medium hover:text-primary-sky-blue font-medium transition duration-300"
+            class="text-[color:var(--secondary-charcoal)] hover:text-[color:var(--primary-pastel-pink)] font-medium transition duration-300"
             >Couple</a
           >
           <a
             href="#date"
-            class="text-text-medium hover:text-primary-sky-blue font-medium transition duration-300"
+            class="text-[color:var(--secondary-charcoal)] hover:text-[color:var(--primary-pastel-pink)] font-medium transition duration-300"
             >Save the Date</a
           >
           <a
             href="#gallery"
-            class="text-text-medium hover:text-primary-sky-blue font-medium transition duration-300"
+            class="text-[color:var(--secondary-charcoal)] hover:text-[color:var(--primary-pastel-pink)] font-medium transition duration-300"
             >Gallery</a
           >
           <a
             href="#messages"
-            class="text-text-medium hover:text-primary-sky-blue font-medium transition duration-300"
+            class="text-[color:var(--secondary-charcoal)] hover:text-[color:var(--primary-pastel-pink)] font-medium transition duration-300"
             >Messages</a
           >
         </div>
@@ -69,7 +66,7 @@
         <div class="md:hidden flex items-center">
           <button
             id="mobile-menu-button"
-            class="text-text-medium focus:outline-none">
+            class="text-[color:var(--text-dark)] focus:outline-none">
             <i class="fas fa-bars text-2xl"></i>
           </button>
         </div>
@@ -78,31 +75,31 @@
       <!-- Mobile Navigation Menu -->
       <div
         id="mobile-menu"
-        class="hidden md:hidden bg-secondary-warm-white py-4 px-4 absolute w-full shadow-lg">
+        class="hidden md:hidden bg-white bg-opacity-90 backdrop-blur-md py-4 px-4 absolute w-full shadow-lg">
         <div class="flex flex-col space-y-4">
           <a
             href="#hero"
-            class="text-text-medium hover:text-primary-sky-blue py-2 font-medium"
+            class="text-[color:var(--secondary-charcoal)] hover:text-[color:var(--primary-pastel-pink)] py-2 font-medium"
             >Home</a
           >
           <a
             href="#couple"
-            class="text-text-medium hover:text-primary-sky-blue py-2 font-medium"
+            class="text-[color:var(--secondary-charcoal)] hover:text-[color:var(--primary-pastel-pink)] py-2 font-medium"
             >Couple</a
           >
           <a
             href="#date"
-            class="text-text-medium hover:text-primary-sky-blue py-2 font-medium"
+            class="text-[color:var(--secondary-charcoal)] hover:text-[color:var(--primary-pastel-pink)] py-2 font-medium"
             >Save the Date</a
           >
           <a
             href="#gallery"
-            class="text-text-medium hover:text-primary-sky-blue py-2 font-medium"
+            class="text-[color:var(--secondary-charcoal)] hover:text-[color:var(--primary-pastel-pink)] py-2 font-medium"
             >Gallery</a
           >
           <a
             href="#messages"
-            class="text-text-medium hover:text-primary-sky-blue py-2 font-medium"
+            class="text-[color:var(--secondary-charcoal)] hover:text-[color:var(--primary-pastel-pink)] py-2 font-medium"
             >Messages</a
           >
         </div>
@@ -130,82 +127,101 @@
       <div class="relative z-10 text-center px-4">
         <h1
           class="text-5xl md:text-7xl font-serif-display font-bold text-white mb-4 animate-fade-in">
-          Emilio <span class="text-accent-gold">&</span> Paquita
+          Emilio <span>&</span> Paquita
         </h1>
-        <div class="w-24 h-1 bg-primary-pastel-pink mx-auto mb-8"></div>
+
         <p
           class="text-xl md:text-2xl text-white font-serif-body font-light mb-12 max-w-2xl mx-auto">
           Join us as we say "I do" and begin our journey together
         </p>
 
         <!-- Scroll Button -->
-        <a href="#couple" class="scroll-down">
-          <div class="animate-bounce flex justify-center">
+        <div class="animate-bounce flex justify-center">
+          <a href="#couple" class="scroll-down">
             <button
-              class="bg-primary-pastel-pink hover:bg-accent-gold text-white p-4 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+              class="bg-[color:var(--primary-mint)] hover:bg-[color:var(--primary-soft-rose)] text-white py-4 px-5 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
               <i class="fas fa-chevron-down text-2xl"></i>
             </button>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- Couple Section -->
-    <section id="couple" class="py-20 px-4 bg-secondary-ivory">
+    <section
+      id="couple"
+      class="py-4 md:py-12 my-4 px-5 sm:px-8 md:px-12 bg-[color:var(--secondary-ivory)] mx-auto">
       <div class="container mx-auto">
         <!-- Rectangular Image with Names in Flex Row -->
-        <div class="flex flex-row-reverse items-center">
+        <div class="flex flex-row-reverse items-center justify-between">
           <!-- Image -->
-          <div class="w-full md:w-1/2 mb-8 md:mb-0">
+          <div
+            class="w-full min-w-[150px] md:w-1/2 md:mb-0 sm:-ml-7 md:-ml-12 z-10">
             <div
-              class="rounded-xl overflow-hidden shadow-xl border-4 border-primary-pastel-pink">
+              class="rounded-xl overflow-hidden shadow-xl border-4 border-[color:var(--primary-pastel-pink)] aspect-[9/10] max-w-[550px]">
               <img
                 src="/assets/FAD08888.JPG"
                 alt="Emilio Pascoal and Paquita"
-                class="w-full h-auto object-cover" />
+                class="w-full h-full object-cover" />
             </div>
           </div>
 
           <!-- Names and Text -->
-          <div class="w-full md:w-1/2 flex flex-col gap-5 text-center px-4">
-            <h1 class="text-sm md:text-3xl">Anda Diundang</h1>
+          <div
+            class="w-full md:w-1/2 flex flex-col gap-5 text-center px-5 md:px-10">
+            <h1 class="text-sm sm:text-lg md:text-3xl">Anda Diundang</h1>
             <h3
-              class="text-3xl md:text-6xl font-serif-display font-bold text-primary-sky-blue mb-4 text-pretty">
-              Emilio <span class="text-primary-pastel-pink">&</span> Paquita
+              class="text-2xl sm:text-4xl md:text-6xl font-serif-display font-bold text-[color:var(--primary-pastel-pink)] text-pretty leading-5 md:max-w-60 mx-auto min-w-20">
+              Emilio
+              <span class="text-[color:var(--primary-pastel-pink)]">&</span>
+              Paquita
             </h3>
-            <p>Minggu, 26 Oktober 2025</p>
+            <p class="text-xs sm:text-sm md:text-lg">Minggu, 26 Oktober 2025</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Save The Date Section -->
-    <section id="date" class="py-20 px-4 bg-secondary-ivory">
-      <div class="container mx-auto text-center flex flex-row gap-1">
-        <div
-          class="relative w-1/3 rounded-t-full overflow-hidden border-2 border-white">
+    <section
+      id="date"
+      class="my-4 px-4 bg-[color:var(--secondary-warm-white-60)]">
+      <div
+        class="container mx-auto text-center flex flex-col-reverse gap-12 md:flex-row justify-between md:justify-center">
+        <div class="relative md:w-1/2 md:p-8 lg:p-20">
           <img
             src="/assets/FAD08888.JPG"
             alt="Couple"
-            class="object-cover w-full h-auto" />
+            class="object-cover w-full h-auto p-7 rounded-t-full overflow-hidden border-2 border-white" />
         </div>
 
-        <div class="w-2/3">
-          <div class="mt-4 md:mt-0 md:ml-4 text-center">
-            <h2 class="text-lg tracking-widest">SAVE THE DATE</h2>
-            <p class="text-sm mb-4">OKTOBER 2025</p>
+        <div class="w-full mx-auto md:mx-0 md:w-1/2 md:pt-16 lg:pt-28">
+          <div
+            class="mt-4 md:mt-0 text-center md:aspect-[9/10] max-w-[550px] mx-auto md:-ml-12 z-10 w-full">
+            <h2 class="text-lg tracking-widest text-bold md:text-4xl">
+              SAVE THE DATE
+            </h2>
+            <p class="text-sm mb-12">OKTOBER 2025</p>
 
             <!-- Grid hari -->
             <div
-              class="grid grid-cols-7 gap-1 text-xs text-center sm:text-sm mb-4">
+              class="grid grid-cols-7 gap-1 gap-y-4 text-xs text-center sm:text-sm mb-12">
               <!-- Header hari -->
-              <span class="text-center">sun</span
-              ><span class="text-center">mon</span
-              ><span class="text-center">tue</span
-              ><span class="text-center">wed</span
-              ><span class="text-center">thu</span
-              ><span class="text-center">fri</span
-              ><span class="text-center">sat</span>
+              <span class="mb-4 text-center text-bold text-[14px] md:text-xl"
+                >sun</span
+              ><span class="mb-4 text-center text-bold text-[14px] md:text-xl"
+                >mon</span
+              ><span class="mb-4 text-center text-bold text-[14px] md:text-xl"
+                >tue</span
+              ><span class="mb-4 text-center text-bold text-[14px] md:text-xl"
+                >wed</span
+              ><span class="mb-4 text-center text-bold text-[14px] md:text-xl"
+                >thu</span
+              ><span class="mb-4 text-center text-bold text-[14px] md:text-xl"
+                >fri</span
+              ><span class="mb-4 text-center text-bold text-[14px] md:text-xl"
+                >sat</span
+              >
 
               <!-- Tanggal Oktober 2025 -->
               <span></span><span></span><span></span><span>1</span><span>2</span
@@ -226,11 +242,11 @@
             </div>
             <div class="flex gap-4 justify-center">
               <button
-                class="max-w-48 bg-white text-[#a9b2a1] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold">
+                class="max-w-48 bg-[color:var(--primary-mint)] text-[color:var(--text-dark)] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold">
                 ADD TO CALENDAR
               </button>
               <button
-                class="w-48 bg-white text-[#a9b2a1] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold">
+                class="w-48 bg-[color:var(--primary-mint)] text-[color:var(--text-dark)] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold">
                 JOIN ZOOM
               </button>
             </div>
@@ -243,20 +259,20 @@
     <!-- <section class="py-20 px-4">
       <div class="container mx-auto text-center">
         <h2
-          class="text-4xl font-serif-display font-bold text-primary-sky-blue mb-6">
+          class="text-4xl font-serif-display font-bold text-[color:var(--primary-pastel-pink)] mb-6">
           Join Streaming
         </h2>
-        <p class="text-lg font-serif-body text-text-dark max-w-3xl mx-auto">
+        <p class="text-lg font-serif-body text-[color:var(--text-dark)] max-w-3xl mx-auto">
           Can't be with us in person? Join our ceremony via live streaming.
         </p>
       </div>
     </section> -->
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-20 px-4 bg-secondary-ivory">
+    <section id="gallery" class="py-20 px-4 bg-[color:var(--secondary-ivory)]">
       <div class="container mx-auto">
         <h2
-          class="text-4xl font-serif-display font-bold text-primary-sky-blue mb-12 text-center">
+          class="text-4xl font-serif-display font-bold text-[color:var(--text-dark)] mb-12 text-center">
           Gallery
         </h2>
 
@@ -414,80 +430,92 @@
     </div>
 
     <!-- Messages Section -->
-    <section id="messages" class="py-20 px-4">
+    <section
+      id="messages"
+      class="py-4 sm:py-12 md:py-20 px-7 bg-[color:var(--secondary-warm-white-60)]">
       <div class="container mx-auto">
         <h2
-          class="text-4xl font-serif-display font-bold text-primary-sky-blue mb-6 text-center">
+          class="text-4xl font-serif-display font-bold text-[color:var(--text-dark)] mb-6 text-center">
           Pesan utk mempelai
         </h2>
         <p
-          class="text-lg font-serif-body text-text-dark max-w-3xl mx-auto text-center mb-12">
+          class="text-lg font-serif-body text-[color:var(--text-dark)] max-w-3xl mx-auto text-center mb-12">
           Share your wishes and messages for the happy couple.
         </p>
-
-        <!-- Message Form -->
-        <div
-          class="max-w-2xl mx-auto bg-secondary-warm-white rounded-2xl py-8 shadow-lg mb-16">
-          <form id="messageForm" class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label
-                  for="senderName"
-                  class="block text-text-dark font-medium mb-2"
-                  >Your Name</label
-                >
-                <input
-                  type="text"
-                  id="senderName"
-                  class="w-full px-4 py-3 rounded-xl border border-border-medium focus:outline-none focus:ring-2 focus:ring-primary-pastel-pink focus:border-transparent"
-                  placeholder="Enter your name"
-                  required />
-              </div>
-            </div>
-            <div>
-              <label for="message" class="block text-text-dark font-medium mb-2"
-                >Your Message</label
-              >
-              <textarea
-                id="message"
-                rows="5"
-                class="w-full px-4 py-3 rounded-xl border border-border-medium focus:outline-none focus:ring-2 focus:ring-primary-pastel-pink focus:border-transparent"
-                placeholder="Write your wishes and messages for the couple..."
-                required></textarea>
-            </div>
-            <div class="text-center">
-              <button
-                type="submit"
-                class="bg-primary-pastel-pink hover:bg-accent-gold text-white font-medium py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-                Send Message
-              </button>
-            </div>
-          </form>
-        </div>
-
-        <!-- Messages Display -->
-        <div class="max-w-4xl mx-auto">
-          <h3
-            class="text-2xl font-serif-display font-bold text-primary-sky-blue mb-8 text-center">
-            Messages from Loved Ones
-          </h3>
-          <div id="messagesContainer" class="space-y-6">
-            <!-- Messages will be dynamically added here -->
-            <div class="bg-secondary-warm-white rounded-2xl p-6 shadow-md">
-              <div class="flex items-start">
-                <div
-                  class="bg-primary-pastel-pink rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0">
-                  <i class="fas fa-user text-white"></i>
-                </div>
-                <div class="flex-1">
-                  <div class="flex justify-between items-start">
-                    <h4 class="font-bold text-text-dark">Anonymous</h4>
-                    <span class="text-sm text-text-light">Just now</span>
+        <div class="md:flex md:gap-9 justify-between">
+          <!-- Message Form -->
+          <div class="md:w-1/2">
+            <h3
+              class="text-2xl font-serif-display font-bold text-[color:var(--text-dark)] mb-4 sm:mb-8 text-center">
+              Your Message
+            </h3>
+            <div
+              class="w-full h-fit mx-auto bg-[color:var(--secondary-warm-white)] rounded-2xl py-8 shadow-lg mb-16">
+              <form id="messageForm" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:px-8">
+                  <div>
+                    <label
+                      for="senderName"
+                      class="block text-[color:var(--text-dark)] font-medium text-lg md:text-xl mb-2"
+                      >Your Name</label
+                    >
+                    <input
+                      type="text"
+                      id="senderName"
+                      class="w-full px-4 py-3 rounded-xl border border-border-medium focus:outline-none focus:ring-2 focus:ring-[color:var(--primary-pastel-pink)] focus:border-transparent"
+                      placeholder="Enter your name"
+                      required />
                   </div>
-                  <p class="text-text-dark mt-2">
-                    Congratulations on your wedding! Wishing you both a lifetime
-                    of happiness and love.
-                  </p>
+                </div>
+                <div class="md:px-8">
+                  <label
+                    for="message"
+                    class="block text-[color:var(--text-dark)] font-medium text-lg md:text-xl mb-2"
+                    >Your Message</label
+                  >
+                  <textarea
+                    id="message"
+                    rows="5"
+                    class="w-full px-4 py-3 rounded-xl border border-border-medium focus:outline-none focus:ring-2 focus:ring-[color:var(--primary-pastel-pink)] focus:border-transparent"
+                    placeholder="Write your wishes and messages for the couple..."
+                    required></textarea>
+                </div>
+                <div class="text-center">
+                  <button
+                    type="submit"
+                    class="bg-[color:var(--primary-mint)] hover:bg-[color:var(--[color:var(--accent-gold)])] text-[color:war(--text-dark)] font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Messages Display -->
+          <div class="md:w-1/2 mx-auto">
+            <h3
+              class="text-2xl font-serif-display font-bold text-[color:var(--text-dark)] mb-4 sm:mb-8 text-center">
+              Messages from Loved Ones
+            </h3>
+            <div id="messagesContainer" class="space-y-6">
+              <!-- Messages will be dynamically added here -->
+              <div
+                class="bg-[color:var(--secondary-warm-white)] rounded-2xl p-6 shadow-md">
+                <div class="flex items-start">
+                  <div class="flex-1">
+                    <div class="flex justify-between items-start">
+                      <h4 class="font-bold text-[color:var(--text-dark)]">
+                        Anonymous
+                      </h4>
+                      <span class="text-sm text-[color:var(--text-light)]"
+                        >Just now</span
+                      >
+                    </div>
+                    <p class="text-[color:var(--text-dark)] mt-2">
+                      Congratulations on your wedding! Wishing you both a
+                      lifetime of happiness and love.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -497,25 +525,28 @@
     </section>
 
     <!-- Thank You Section -->
-    <section class="py-20 px-4 bg-secondary-ivory">
+    <section class="sm:py-10 md:py-20 px-4 bg-[color:var(--secondary-ivory)]">
       <div class="container mx-auto text-center">
         <h2
-          class="text-4xl font-serif-display font-bold text-primary-sky-blue mb-6">
+          class="text-4xl font-serif-display font-bold text-[color:var(--text-dark)] mb-6">
           Thank You
         </h2>
-        <p class="text-lg font-serif-body text-text-dark max-w-3xl mx-auto">
+        <p
+          class="text-lg font-serif-body text-[color:var(--text-dark)] max-w-3xl mx-auto">
           Thank you for being part of our special day and celebrating with us.
         </p>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-secondary-charcoal text-text-light py-2">
+    <footer
+      class="bg-[color:var(--secondary-charcoal)] text-[color:var(--text-light)] py-2">
       <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="flex flex-col md:flex-row justify-center items-center">
           <div class="">
             <div class="flex items-center">
-              <i class="fas fa-heart text-primary-pastel-pink mr-2"></i>
+              <i
+                class="fas fa-heart text-[color:var(--primary-pastel-pink)] mr-2"></i>
               <span class="text-lg font-serif-display font-medium"
                 >LoardiSteve &copy; 2025</span
               >
