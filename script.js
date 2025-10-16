@@ -49,18 +49,18 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
 // Gallery Lightbox Functionality
 const galleryImages = [
-  "assets/gallery.jpg",
-  "assets/gallery2.jpg",
-  "assets/gallery3.jpg",
-  "assets/gallery4.jpg",
-  "assets/gallery5.jpg",
-  "assets/gallery6.jpg",
-  "assets/gallery7.jpg",
-  "assets/gallery12.jpg",
-  "assets/gallery9.jpg",
-  "assets/gallery8.jpg",
-  "assets/gallery11.jpg",
-  "assets/gallery10.jpg",
+  "assets/img/gallery.jpg",
+  "assets/img/gallery2.jpg",
+  "assets/img/gallery3.jpg",
+  "assets/img/gallery4.jpg",
+  "assets/img/gallery5.jpg",
+  "assets/img/gallery6.jpg",
+  "assets/img/gallery7.jpg",
+  "assets/img/gallery12.jpg",
+  "assets/img/gallery9.jpg",
+  "assets/img/gallery8.jpg",
+  "assets/img/gallery11.jpg",
+  "assets/img/gallery10.jpg",
 ];
 
 let currentImageIndex = 0;
@@ -339,21 +339,24 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Intersection Observer for section entrance animations
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section");
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // Add animated class when section comes into view
-        entry.target.classList.add("animated");
-      }
-    });
-  }, {
-    threshold: 0.1, // Trigger when 10% of the section is visible
-    rootMargin: "0px 0px -20% 0px" // Trigger slightly before section reaches viewport
-  });
-  
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add animated class when section comes into view
+          entry.target.classList.add("animated");
+        }
+      });
+    },
+    {
+      threshold: 0.1, // Trigger when 10% of the section is visible
+      rootMargin: "0px 0px -20% 0px", // Trigger slightly before section reaches viewport
+    }
+  );
+
   // Observe all sections
   sections.forEach((section) => {
     observer.observe(section);
@@ -365,9 +368,10 @@ function addToGoogleCalendar() {
   // Wedding event details
   const eventTitle = "Emilio & Paquita Wedding";
   const eventLocation = "Your Wedding Venue, Wedding City"; // TODO: Update with actual venue
-  const eventDescription = "Join us as we say 'I do' and begin our journey together. " +
+  const eventDescription =
+    "Join us as we say 'I do' and begin our journey together. " +
     "Minggu, 26 Oktober 2025 (Sunday, October 26, 2025)"; // Indonesian for Sunday, October 26, 2025
-  
+
   // Date: Sunday, October 26, 2025 (based on what I see in the HTML)
   const startDate = "20251026"; // Format: YYYYMMDD
   const startTime = "1000"; // 10:00 AM TODO: Update with actual time if different
@@ -379,7 +383,8 @@ function addToGoogleCalendar() {
   const endDateTime = `${endDate}T${endTime}00`;
 
   // Create the Google Calendar URL
-  const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE` +
+  const googleCalendarUrl =
+    `https://www.google.com/calendar/render?action=TEMPLATE` +
     `&text=${encodeURIComponent(eventTitle)}` +
     `&dates=${startDateTime}/${endDateTime}` +
     `&location=${encodeURIComponent(eventLocation)}` +
@@ -387,7 +392,7 @@ function addToGoogleCalendar() {
     `&sprop=&sprop=name:`;
 
   // Open Google Calendar in a new tab
-  window.open(googleCalendarUrl, '_blank');
+  window.open(googleCalendarUrl, "_blank");
 }
 
 // Make functions globally available so HTML onclick handlers can access them
