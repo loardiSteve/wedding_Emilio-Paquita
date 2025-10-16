@@ -360,7 +360,38 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-// Make lightbox functions globally available so HTML onclick handlers can access them
+// Google Calendar Integration
+function addToGoogleCalendar() {
+  // Wedding event details
+  const eventTitle = "Emilio & Paquita Wedding";
+  const eventLocation = "Your Wedding Venue, Wedding City"; // TODO: Update with actual venue
+  const eventDescription = "Join us as we say 'I do' and begin our journey together. " +
+    "Minggu, 26 Oktober 2025 (Sunday, October 26, 2025)"; // Indonesian for Sunday, October 26, 2025
+  
+  // Date: Sunday, October 26, 2025 (based on what I see in the HTML)
+  const startDate = "20251026"; // Format: YYYYMMDD
+  const startTime = "1000"; // 10:00 AM TODO: Update with actual time if different
+  const endDate = "20251026"; // Format: YYYYMMDD
+  const endTime = "1600"; // 4:00 PM TODO: Update with actual end time if different
+
+  // Format dates for Google Calendar
+  const startDateTime = `${startDate}T${startTime}00`;
+  const endDateTime = `${endDate}T${endTime}00`;
+
+  // Create the Google Calendar URL
+  const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE` +
+    `&text=${encodeURIComponent(eventTitle)}` +
+    `&dates=${startDateTime}/${endDateTime}` +
+    `&location=${encodeURIComponent(eventLocation)}` +
+    `&details=${encodeURIComponent(eventDescription)}` +
+    `&sprop=&sprop=name:`;
+
+  // Open Google Calendar in a new tab
+  window.open(googleCalendarUrl, '_blank');
+}
+
+// Make functions globally available so HTML onclick handlers can access them
 window.openLightbox = openLightbox;
 window.closeLightbox = closeLightbox;
 window.changeImage = changeImage;
+window.addToGoogleCalendar = addToGoogleCalendar;
