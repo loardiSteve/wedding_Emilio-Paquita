@@ -338,6 +338,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// Intersection Observer for section entrance animations
+document.addEventListener("DOMContentLoaded", function() {
+  const sections = document.querySelectorAll("section");
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Add animated class when section comes into view
+        entry.target.classList.add("animated");
+      }
+    });
+  }, {
+    threshold: 0.1, // Trigger when 10% of the section is visible
+    rootMargin: "0px 0px -20% 0px" // Trigger slightly before section reaches viewport
+  });
+  
+  // Observe all sections
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+});
+
 // Make lightbox functions globally available so HTML onclick handlers can access them
 window.openLightbox = openLightbox;
 window.closeLightbox = closeLightbox;
