@@ -13,7 +13,13 @@ const CONFIG = {
 };
 
 // Firebase is loaded via script tag in HTML, so we can use the global firebase variables
-const { initializeApp, getDatabase, ref, push, onValue } = firebase;
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+import {
+  getDatabase,
+  ref,
+  push,
+  onValue,
+} from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
 
 // Mobile menu toggle functionality
 const mobileMenuButton = document.getElementById("mobile-menu-button");
@@ -32,12 +38,10 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     const targetElement = document.querySelector(targetId);
 
     if (targetElement) {
-      // Calculate offset to account for fixed header
-      const offsetPosition = targetElement.offsetTop - 80;
-
-      window.scrollTo({
-        top: offsetPosition,
+      // Use scrollIntoView for better snap behavior compatibility
+      targetElement.scrollIntoView({
         behavior: "smooth",
+        block: "start",
       });
     }
   });
@@ -66,6 +70,10 @@ function openLightbox(index) {
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
 
+  // Reset opacity to ensure image is visible
+  lightboxImg.style.opacity = "1";
+  lightboxImg.style.transition = "";
+
   lightboxImg.src = galleryImages[index];
   lightbox.classList.remove("hidden");
   document.body.style.overflow = "hidden"; // Prevent background scrolling
@@ -78,17 +86,44 @@ function closeLightbox() {
 }
 
 function changeImage(direction) {
-  currentImageIndex += direction;
-
-  // Loop around if we go beyond the array bounds
-  if (currentImageIndex >= galleryImages.length) {
-    currentImageIndex = 0;
-  } else if (currentImageIndex < 0) {
-    currentImageIndex = galleryImages.length - 1;
-  }
-
   const lightboxImg = document.getElementById("lightbox-img");
-  lightboxImg.src = galleryImages[currentImageIndex];
+
+  // Determine the animation class based on direction
+  const animationClass = direction > 0 ? "slide-in-left" : "slide-in-right";
+
+  // Add the fade-out class to fade out the current image
+  lightboxImg.classList.add("fade-out");
+
+  // After fade out completes, change the image and apply the slide animation
+  setTimeout(() => {
+    currentImageIndex += direction;
+
+    // Loop around if we go beyond the array bounds
+    if (currentImageIndex >= galleryImages.length) {
+      currentImageIndex = 0;
+    } else if (currentImageIndex < 0) {
+      currentImageIndex = galleryImages.length - 1;
+    }
+
+    lightboxImg.src = galleryImages[currentImageIndex];
+
+    // Once the new image loads, apply the slide animation
+    lightboxImg.onload = function () {
+      // Remove the fade-out class and add the appropriate slide animation class
+      lightboxImg.classList.remove("fade-out");
+
+      // Add animation class based on direction
+      lightboxImg.classList.add(animationClass);
+
+      // Remove the animation class after it completes so it can be reused
+      setTimeout(() => {
+        lightboxImg.classList.remove(animationClass);
+      }, 500); // Match to the CSS animation duration
+
+      // Remove onload handler to prevent it from running again
+      lightboxImg.onload = null;
+    };
+  }, 500); // Match to the CSS animation duration
 }
 
 // Close lightbox when clicking outside the image
