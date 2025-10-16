@@ -118,8 +118,17 @@
       <!-- Background Image -->
       <div class="absolute inset-0 z-0">
         <img
-          src="./assets/hero.jpg"
+          src="./assets/img/hero.jpg"
+          srcset="
+            ./assets/img/hero_medium.webp  480w,
+            ./assets/img/hero_high.webp   1024w,
+            ./assets/img/hero.jpg         1920w
+          "
+          sizes="(max-width: 700px) 480px, 
+         (max-width: 1200px) 1024px, 
+         1920px"
           alt="Wedding Background"
+          loading="lazy"
           class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-overlay-dark"></div>
       </div>
@@ -161,8 +170,17 @@
             <div
               class="rounded-xl overflow-hidden shadow-xl border-4 border-[color:var(--primary-pastel-pink)] aspect-[9/10] max-w-[550px]">
               <img
-                src="./assets/couple2.jpg"
+                src="./assets/img/couple2.jpg"
+                srcset="
+                  ./assets/img/couple2_medium.webp  480w,
+                  ./assets/img/couple2_high.webp   1024w,
+                  ./assets/img/couple2.jpg         1920w
+                "
+                sizes="(max-width: 700px) 480px, 
+               (max-width: 1200px) 1024px, 
+               1920px"
                 alt="Emilio Pascoal and Paquita"
+                loading="lazy"
                 class="w-full h-full object-cover" />
             </div>
           </div>
@@ -186,12 +204,12 @@
         </div>
       </div>
       <div
-        class="container mx-auto text-center bg-[color:var(--secondary-ivory)] pt-14 pb-6 px-4 md:px-16 text-pretty">
+        class="container mx-auto text-center bg-[color:var(--secondary-ivory)] pt-14 pb-6 px-4 md:px-10">
         <h2
-          class="text-lg md:text-2xl lg:text-3xl font-serif-display font-bold text-[color:var(--text-dark)] mb-6">
+          class="text-lg md:text-2xl lg:text-3xl font-serif-display font-bold text-[color:var(--text-dark)] mb-6 text-pretty text-center">
           Karena itu seorang pria akan meninggalkan ayah dan ibunya, dan
           keduanya akan menjadi satu, maka mereka bukan lagi dua, tapi satu. ~
-          Mat 19 : 7,8
+          Matius 19 : 7, 8
         </h2>
         <!-- <p
           class="text-lg font-serif-body text-[color:var(--text-dark)] max-w-3xl mx-auto">
@@ -209,8 +227,17 @@
         <div
           class="relative max-w-[450px] md:max-w-1/2 md:min-w-[400px] mx-auto md:p-8 lg:p-20">
           <img
-            src="./assets/saveTheDate4.jpg"
+            src="./assets/img/saveTheDate4.jpg"
+            srcset="
+              ./assets/img/saveTheDate4_medium.webp  480w,
+              ./assets/img/saveTheDate4_high.webp   1024w,
+              ./assets/img/saveTheDate4.jpg         1920w
+            "
+            sizes="(max-width: 700px) 480px, 
+           (max-width: 1200px) 1024px, 
+           1920px"
             alt="Couple"
+            loading="lazy"
             class="object-cover w-full h-full p-7 rounded-t-full overflow-hidden border-2 border-white" />
         </div>
 
@@ -285,11 +312,20 @@
           <div class="bento-grid-container">
             <!-- Large Bento Item -->
             <div
-              class="bento-item-medium rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+              class="bento-item-medium sm:bento-item-wide lg:bento-item-medium rounded-xl overflow-hidden shadow-xl cursor-pointer group"
               onclick="openLightbox(0)">
               <img
-                src="assets/gallery.jpg"
+                src="assets/img/gallery.jpg"
+                srcset="
+                  assets/img/gallery_medium.webp  480w,
+                  assets/img/gallery_high.webp   1024w,
+                  assets/img/gallery.jpg         1920w
+                "
+                sizes="(max-width: 700px) 480px, 
+               (max-width: 1200px) 1024px, 
+               1920px"
                 alt="Gallery Image 1"
+                loading="lazy"
                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
 
@@ -298,8 +334,17 @@
               class="bento-item-tall h-full rounded-xl overflow-hidden shadow-xl cursor-pointer group"
               onclick="openLightbox(1)">
               <img
-                src="assets/gallery2.jpg"
+                src="assets/img/gallery2.jpg"
+                srcset="
+                  assets/img/gallery2_medium.webp  480w,
+                  assets/img/gallery2_high.webp   1024w,
+                  assets/img/gallery2.jpg         1920w
+                "
+                sizes="(max-width: 700px) 480px, 
+               (max-width: 1200px) 1024px, 
+               1920px"
                 alt="Gallery Image 2"
+                loading="lazy"
                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
 
@@ -308,8 +353,17 @@
               class="bento-item-medium rounded-xl overflow-hidden shadow-xl cursor-pointer group"
               onclick="openLightbox(2)">
               <img
-                src="assets/gallery3.jpg"
+                src="assets/img/gallery3.jpg"
+                srcset="
+                  assets/img/gallery3_medium.webp  480w,
+                  assets/img/gallery3_high.webp   1024w,
+                  assets/img/gallery3.jpg         1920w
+                "
+                sizes="(max-width: 700px) 480px, 
+               (max-width: 1200px) 1024px, 
+               1920px"
                 alt="Gallery Image 3"
+                loading="lazy"
                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
 
@@ -318,8 +372,17 @@
               class="bento-item-small h-full rounded-xl overflow-hidden shadow-xl cursor-pointer group"
               onclick="openLightbox(3)">
               <img
-                src="assets/gallery4.jpg"
+                src="assets/img/gallery4.jpg"
+                srcset="
+                  assets/img/gallery4_medium.webp  480w,
+                  assets/img/gallery4_high.webp   1024w,
+                  assets/img/gallery4.jpg         1920w
+                "
+                sizes="(max-width: 700px) 480px, 
+               (max-width: 1200px) 1024px, 
+               1920px"
                 alt="Gallery Image 4"
+                loading="lazy"
                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
 
@@ -328,8 +391,17 @@
               class="bento-item-tall h-full rounded-xl overflow-hidden shadow-xl cursor-pointer group"
               onclick="openLightbox(4)">
               <img
-                src="assets/gallery5.jpg"
+                src="assets/img/gallery5.jpg"
+                srcset="
+                  assets/img/gallery5_medium.webp  480w,
+                  assets/img/gallery5_high.webp   1024w,
+                  assets/img/gallery5.jpg         1920w
+                "
+                sizes="(max-width: 700px) 480px, 
+               (max-width: 1200px) 1024px, 
+               1920px"
                 alt="Gallery Image 5"
+                loading="lazy"
                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
 
@@ -338,8 +410,17 @@
               class="bento-item-square rounded-xl overflow-hidden shadow-xl cursor-pointer group"
               onclick="openLightbox(5)">
               <img
-                src="assets/gallery6.jpg"
+                src="assets/img/gallery6.jpg"
+                srcset="
+                  assets/img/gallery6_medium.webp  480w,
+                  assets/img/gallery6_high.webp   1024w,
+                  assets/img/gallery6.jpg         1920w
+                "
+                sizes="(max-width: 700px) 480px, 
+               (max-width: 1200px) 1024px, 
+               1920px"
                 alt="Gallery Image 6"
+                loading="lazy"
                 class="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105" />
             </div>
 
@@ -348,8 +429,17 @@
               class="bento-item-square rounded-xl overflow-hidden shadow-xl cursor-pointer group"
               onclick="openLightbox(6)">
               <img
-                src="assets/gallery7.jpg"
+                src="assets/img/gallery7.jpg"
+                srcset="
+                  assets/img/gallery7_medium.webp  480w,
+                  assets/img/gallery7_high.webp   1024w,
+                  assets/img/gallery7.jpg         1920w
+                "
+                sizes="(max-width: 700px) 480px, 
+               (max-width: 1200px) 1024px, 
+               1920px"
                 alt="Gallery Image 7"
+                loading="lazy"
                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
 
@@ -358,8 +448,17 @@
               class="bento-item-tall h-full rounded-xl overflow-hidden shadow-xl cursor-pointer group"
               onclick="openLightbox(7)">
               <img
-                src="assets/gallery12.jpg"
+                src="assets/img/gallery12.jpg"
+                srcset="
+                  assets/img/gallery12_medium.webp  480w,
+                  assets/img/gallery12_high.webp   1024w,
+                  assets/img/gallery12.jpg         1920w
+                "
+                sizes="(max-width: 700px) 480px, 
+               (max-width: 1200px) 1024px, 
+               1920px"
                 alt="Gallery Image 8"
+                loading="lazy"
                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
 
@@ -368,8 +467,17 @@
               class="bento-item-medium rounded-xl overflow-hidden shadow-xl cursor-pointer group"
               onclick="openLightbox(8)">
               <img
-                src="assets/gallery9.jpg"
+                src="assets/img/gallery9.jpg"
+                srcset="
+                  assets/img/gallery9_medium.webp  480w,
+                  assets/img/gallery9_high.webp   1024w,
+                  assets/img/gallery9.jpg         1920w
+                "
+                sizes="(max-width: 700px) 480px, 
+               (max-width: 1200px) 1024px, 
+               1920px"
                 alt="Gallery Image 9"
+                loading="lazy"
                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
 
@@ -378,8 +486,17 @@
               class="bento-item-medium h-full rounded-xl overflow-hidden shadow-xl cursor-pointer group"
               onclick="openLightbox(9)">
               <img
-                src="assets/gallery8.jpg"
+                src="assets/img/gallery8.jpg"
+                srcset="
+                  assets/img/gallery8_medium.webp  480w,
+                  assets/img/gallery8_high.webp   1024w,
+                  assets/img/gallery8.jpg         1920w
+                "
+                sizes="(max-width: 700px) 480px, 
+               (max-width: 1200px) 1024px, 
+               1920px"
                 alt="Gallery Image 10"
+                loading="lazy"
                 class="w-full h-full object-cover object-right transition-transform duration-300 group-hover:scale-105" />
             </div>
 
@@ -388,16 +505,34 @@
               class="bento-item-medium rounded-xl overflow-hidden shadow-xl cursor-pointer group"
               onclick="openLightbox(10)">
               <img
-                src="assets/gallery11.jpg"
+                src="assets/img/gallery11.jpg"
+                srcset="
+                  assets/img/gallery11_medium.webp  480w,
+                  assets/img/gallery11_high.webp   1024w,
+                  assets/img/gallery11.jpg         1920w
+                "
+                sizes="(max-width: 700px) 480px, 
+               (max-width: 1200px) 1024px, 
+               1920px"
                 alt="Gallery Image 11"
+                loading="lazy"
                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
             <div
               class="bento-item-medium rounded-xl overflow-hidden shadow-xl cursor-pointer group"
               onclick="openLightbox(11)">
               <img
-                src="assets/gallery10.jpg"
+                src="assets/img/gallery10.jpg"
+                srcset="
+                  assets/img/gallery10_medium.webp  480w,
+                  assets/img/gallery10_high.webp   1024w,
+                  assets/img/gallery10.jpg         1920w
+                "
+                sizes="(max-width: 700px) 480px, 
+               (max-width: 1200px) 1024px, 
+               1920px"
                 alt="Gallery Image 12"
+                loading="lazy"
                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
           </div>
