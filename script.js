@@ -395,8 +395,16 @@ function addToGoogleCalendar() {
   window.open(googleCalendarUrl, "_blank");
 }
 
+function openLinkZoom() {
+  window.open(
+    "https://us06web.zoom.us/j/88220852894?pwd=A8WgHjbwnKhEYnqAbLzE1adaEP3pj9.1",
+    "_blank"
+  );
+}
+
 // Make functions globally available so HTML onclick handlers can access them
 window.openLightbox = openLightbox;
 window.closeLightbox = closeLightbox;
 window.changeImage = changeImage;
 window.addToGoogleCalendar = addToGoogleCalendar;
+window.openLinkZoom = openLinkZoom;

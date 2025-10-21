@@ -225,20 +225,26 @@
       <div
         class="container mx-auto text-center flex flex-col-reverse gap-12 md:flex-row justify-between md:justify-center">
         <div
-          class="relative max-w-[450px] md:max-w-1/2 md:min-w-[400px] mx-auto md:p-8 lg:p-20">
-          <img
-            src="./assets/img/saveTheDate4.jpg"
-            srcset="
-              ./assets/img/saveTheDate4_medium.webp  480w,
-              ./assets/img/saveTheDate4_high.webp   1024w,
-              ./assets/img/saveTheDate4.jpg         1920w
-            "
-            sizes="(max-width: 700px) 480px, 
+          class="relative max-w-[450px] md:max-w-1/2 md:min-w-[400px] lg:max-w-[550px] mx-auto md:p-8 lg:p-20">
+          <div
+            class="w-full h-full p-7 md:p-10 rounded-t-full overflow-hidden border-2 border-white">
+            <img
+              src="./assets/img/saveTheDate4.jpg"
+              srcset="
+                ./assets/img/saveTheDate4_medium.webp  480w,
+                ./assets/img/saveTheDate4_high.webp   1024w,
+                ./assets/img/saveTheDate4.jpg         1920w
+              "
+              sizes="(max-width: 700px) 480px, 
            (max-width: 1200px) 1024px, 
            1920px"
-            alt="Couple"
-            loading="lazy"
-            class="object-cover object-bottom w-full h-full p-7 rounded-t-full overflow-hidden border-2 border-white" />
+              alt="Couple"
+              loading="lazy"
+              class="object-cover object-bottom w-full h-full rounded-t-full" />
+            <p class="mt-2 text-center text-[color:var(--text-dark)]">
+              #EMILIOndreamswithPAQUITA
+            </p>
+          </div>
         </div>
 
         <div class="w-full mx-auto md:mx-0 md:w-1/2 md:pt-16 lg:pt-28">
@@ -286,12 +292,13 @@
             <div
               class="flex gap-4 justify-center text-xs md:text-sm lg:text-xl">
               <button
-                class="bg-[color:var(--primary-mint)] text-[color:var(--text-dark)] px-4 py-2 rounded-full font-semibold sm:min-w-48"
+                class="bg-[color:var(--primary-mint)] hover:bg-[color:var(--primary-soft-rose)] text-[color:var(--text-dark)] px-4 py-2 rounded-full font-semibold sm:min-w-48"
                 onclick="addToGoogleCalendar()">
                 ADD TO CALENDAR
               </button>
               <button
-                class="bg-[color:var(--primary-mint)] sm:min-w-48 text-[color:var(--text-dark)] px-4 py-2 rounded-full font-semibold">
+                class="bg-[color:var(--primary-mint)] hover:bg-[color:var(--primary-soft-rose)] sm:min-w-48 text-[color:var(--text-dark)] px-4 py-2 rounded-full font-semibold"
+                onclick="openLinkZoom()">
                 JOIN ZOOM
               </button>
             </div>
