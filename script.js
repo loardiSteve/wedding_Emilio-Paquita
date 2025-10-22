@@ -402,9 +402,17 @@ function openLinkZoom() {
   );
 }
 
+function linkToIg() {
+  window.open(
+    "https://www.instagram.com/reel/DPEiNetkoHx/?utm_source=ig_web_copy_link",
+    "_blank"
+  );
+}
+
 // Make functions globally available so HTML onclick handlers can access them
 window.openLightbox = openLightbox;
 window.closeLightbox = closeLightbox;
 window.changeImage = changeImage;
 window.addToGoogleCalendar = addToGoogleCalendar;
 window.openLinkZoom = openLinkZoom;
+window.linkToIg = linkToIg;

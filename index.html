@@ -318,9 +318,37 @@
         </h2>
 
         <!-- Bento Grid Gallery with Vertical Scroll -->
-        <div class="max-w-6xl max-h-screen overflow-y-scroll mx-auto">
+        <div class="max-w-6xl max-h-screen pb-6 overflow-y-scroll mx-auto">
           <div class="bento-grid-container">
             <!-- Large Bento Item -->
+            <div
+              class="relative bento-item-wide rounded-xl overflow-hidden shadow-xl cursor-pointer group object-cover object-bottom"
+              onclick="linkToIg()">
+              <img
+                src="assets/img/thumbnail_video.jpg"
+                srcset="
+                  assets/img/thubnail_video_medium.webp  480w,
+                  assets/img/thubnail_video_high.webp   1024w,
+                  assets/img/thumbnail_video.jpg        1920w
+                "
+                sizes="(max-width: 700px) 480px, 
+             (max-width: 1200px) 1024px, 
+             1920px"
+                alt="Video"
+                loading="lazy"
+                class="w-full h-full object-cover object-bottom" />
+              <div
+                class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/70 to-transparent"></div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                class="absolute z-20 left-1/2 top-1/2 size-6 md:size-12 hover:scale-125 duration-300 transition-all">
+                <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  fill="#ffffff"
+                  d="M91.2 36.9c-12.4-6.8-27.4-6.5-39.6 .7S32 57.9 32 72l0 368c0 14.1 7.5 27.2 19.6 34.4s27.2 7.5 39.6 .7l336-184c12.8-7 20.8-20.5 20.8-35.1s-8-28.1-20.8-35.1l-336-184z" />
+              </svg>
+            </div>
             <div
               class="bento-item-medium sm:bento-item-wide lg:bento-item-medium rounded-xl overflow-hidden shadow-xl cursor-pointer group"
               onclick="openLightbox(0)">
@@ -504,7 +532,7 @@
 
             <!-- Gallery Item 11 -->
             <div
-              class="bento-item-small h-full rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+              class="bento-item-medium h-full rounded-xl overflow-hidden shadow-xl cursor-pointer group"
               onclick="openLightbox(10)">
               <img
                 src="assets/img/gallery11.jpg"
@@ -521,7 +549,7 @@
                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
             <div
-              class="bento-item-wide rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+              class="bento-item-custom-wide rounded-xl overflow-hidden shadow-xl cursor-pointer group"
               onclick="openLightbox(11)">
               <img
                 src="assets/img/gallery10.jpg"
@@ -577,7 +605,7 @@
       <div class="container mx-auto">
         <h2
           class="text-4xl font-serif-display font-bold text-[color:var(--text-dark)] mb-6 text-center">
-          Pesan utk mempelai
+          Pesan untuk mempelai
         </h2>
         <p
           class="text-lg font-serif-body text-[color:var(--text-dark)] max-w-3xl mx-auto text-center mb-12">

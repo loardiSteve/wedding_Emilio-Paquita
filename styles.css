@@ -179,6 +179,11 @@ textarea {
     grid-column: span 2;
     aspect-ratio: 16/9;
   }
+
+  .bento-item-custom-wide {
+    grid-column: span 2;
+    aspect-ratio: 16/9;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -197,8 +202,16 @@ textarea {
   }
 
   .bento-item-wide {
+    grid-column: span 3;
+    aspect-ratio: 16/9;
+  }
+  .bento-item-custom-wide {
     grid-column: span 1;
-    /* aspect-ratio: 16/9; */
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
   }
 }
 
