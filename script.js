@@ -409,6 +409,10 @@ function linkToIg() {
   );
 }
 
+function openYoutube() {
+  window.open("https://tinyurl.com/EMILIOndreamswithPAQUITA", "_blank");
+}
+
 // Make functions globally available so HTML onclick handlers can access them
 window.openLightbox = openLightbox;
 window.closeLightbox = closeLightbox;
@@ -416,3 +420,4 @@ window.changeImage = changeImage;
 window.addToGoogleCalendar = addToGoogleCalendar;
 window.openLinkZoom = openLinkZoom;
 window.linkToIg = linkToIg;
+window.openYoutube = openYoutube;
